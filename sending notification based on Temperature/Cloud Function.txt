@@ -1,0 +1,33 @@
+import base64
+import json
+from google.cloud import iot_v1
+import os
+from twilio.rest import Client
+
+def send_SMS():
+    # Your Account SID from twilio.com/console
+    account_sid = "AC001fc61d4b91e1bd4ff137b580ab86c3"
+    # Your Auth Token from twilio.com/console
+    auth_token = "e9f483f639f07296d18125bbb570c689"
+
+    client = Client(account_sid, auth_token)
+
+    client.messages.create(
+        to="+916385185864",
+        from_= "+12054420884",
+        body="Hello! The temperature has crossed the threshold limit")
+
+def Notification(event, context):
+      print("hi")
+      if 'data' in event:
+        print("hello")
+        data = event['data']
+        data = base64.b64decode(data)
+        data = data.decode('utf-8')
+        data = json.loads(data)
+        print(data)
+        temperature = int(data['temperature'])
+        if temperature > 24:
+            print("Above temp")
+            send_SMS()   
+    
