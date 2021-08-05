@@ -1,0 +1,3 @@
+SELECT * FROM `covid-patient-monitoring.dataset_1.table_4`
+ORDER BY Timestamp DESC
+LIMIT 100
