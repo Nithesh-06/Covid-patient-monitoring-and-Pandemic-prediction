@@ -1,0 +1,41 @@
+
+
+from google.cloud import pubsub_v1
+import random
+import time
+#function to determine temperature
+def Temp():
+    r=random.randint(25,35)
+    return r
+#function to determine X coordinate ( Latitude)
+def x():
+    x=25
+    return x
+#function to determine X coordinate ( Longitude)
+def y():
+    y=25
+    return y
+
+publisher = pubsub_v1.PublisherClient()
+topic_name = 'projects/{project_id}/topics/{topic}'.format(project_id='covid-patient-monitoring', topic='Patient-Data')
+
+while True:
+    try:
+        
+        # Define the structure of payload
+        payload = '{{"data":"Payload data","Timestamp":{},"PatientID":{},"PatientName":"Ram","x":{},"y":{},"temperature":{}}}'.format(int(time.time()),int(1),int(x()),int(y()),int(28))
+
+        # Publish the payload to the cloud
+        publisher.publish(topic_name, data=payload.encode('utf-8'))
+
+        print("Publishing the payload : " + payload)
+
+        # Wait for 3 seconds before executing the loop again
+        time.sleep(60)
+
+    # In case of keyboard interruption or system crash, raise these exceptions
+    except (KeyboardInterrupt, SystemExit):
+        raise
+
+
+

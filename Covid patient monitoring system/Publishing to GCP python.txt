@@ -1,0 +1,48 @@
+
+
+from google.cloud import pubsub_v1
+import random
+import time
+
+def Temp():
+    r=random.randint(36,39)
+    return r
+
+def Pulse():
+    x=random.randint(60,100)
+    p=random.randint((x-2),(x+2))
+    return p
+
+def BR():
+    br=random.randint(25,35)
+    return br
+
+def Rtemp():
+    rt=random.randint(25,35)
+    return rt
+
+def Humidity():
+    hu=random.randint(25,35)
+    return hu
+
+publisher = pubsub_v1.PublisherClient()
+topic_name_Temperature = 'projects/{project_id}/topics/{topic}'.format(project_id='home-patient-monitoring', topic='Temperature')
+
+while True:
+    try:
+        
+        # Define the structure of payload
+        payload_Patiendata = '{{"Temperature":{},"Pulse":{},"Breathing Rate":{},"Room_Temperature":{},"Humdity":{} }}'.format(Temp(),Pulse(),BR(),Rtemp(),Humidity())
+
+        # Publish the payload to the cloud
+        publisher.publish(topic_name, data=payload_Patientdata.encode('utf-8'))
+
+        print("Publishing the payload : " + payload)
+
+        # Wait for 3 seconds before executing the loop again
+        time.sleep(3)
+
+    # In case of keyboard interruption or system crash, raise these exceptions
+    except (KeyboardInterrupt, SystemExit):
+        raise
+
