@@ -1,0 +1,60 @@
+import base64
+import json
+from google.cloud import iot_v1
+import os
+from twilio.rest import Client
+from sendgrid import SendGridAPIClient
+from sendgrid.helpers.mail import Mail
+
+count = 0
+
+
+def send_SMS():
+    # Your Account SID from twilio.com/console
+    account_sid = os.environ['TWILIO_ACCOUNT_SID']
+    # Your Auth Token from twilio.com/console
+    auth_token = os.environ['TWILIO_AUTH_TOKEN']
+
+    client = Client(account_sid, auth_token)
+
+    client.messages.create(
+        to=os.environ['TWILIO_TO'],
+        from_=os.environ['TWILIO_FROM'],
+        body="Patient Critical")
+
+
+def Notification(event, context):
+    """Background Cloud Function to be triggered by Pub/Sub.
+    Args:
+         event (dict):  The dictionary with data specific to this type of
+         event. The `data` field contains the PubsubMessage message. The
+         `attributes` field will contain custom attributes if there are any.
+         context (google.cloud.functions.Context): The Cloud Functions event
+         metadata. The `event_id` field contains the Pub/Sub message ID. The
+         `timestamp` field contains the publish time.
+    """
+
+    print("""This Function was triggered by messageId {} \
+    published at {}""".format(
+        context.event_id, context.timestamp))
+
+    if 'data' in event:
+        global count
+        data = event['data']
+        data = base64.b64decode(data)
+        data = data.decode('utf-8')
+        data = json.loads(data)
+
+        temperature = float(data['Temperature'])
+
+        if temperature > 24.0:
+            # Now send SMS as the threshold limit is crossed
+            count = count+1
+            if count =10:
+                # This is the first time temperature has exceeded beyond the threshold
+                send_SMS()
+
+
+    else:
+        # This block gets executed when telemetry is not sent
+        print("Data is not present!")
