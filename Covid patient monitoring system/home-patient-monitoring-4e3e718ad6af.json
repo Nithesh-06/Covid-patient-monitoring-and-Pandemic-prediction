@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "home-patient-monitoring",
+  "private_key_id": "4e3e718ad6afe7e400590a87a1ac4946ffafad95",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQDXcT1W30nbpgOE\nt3rdyXwvco60U4aPgByxKrySm8GW3tp6QLVowsbPuKY4HH6j1sWqKFG2SAjDemSZ\nsD7qrmKULwOqF1+VO4y7K5xqRg3xvYscgAoLwWN2lASFfX4HHgRO6RisUSh+HEAH\nYKxMWVOm1G9nDGZ0PNtSqElywp1CuQNJsvDaQw5FpHn7cAEk0m/TqL2uM4EPZT8G\nJJNOQ2Kz9zY5iIR23bHZ6UVCIkOQfrP4DlgxOtP3jR3+F0wuj7GQ0GtLXtFMKF8N\nqEPHERYksxYr/ezGnKrSuIZjum3Q5IAzaG83Uh1V8fagD+bEPcuuYK7kyFSk/2NW\nEF7JQ73hAgMBAAECggEAJmEy9zXh93I0sEDrb3VEXUOALpmuoAPHmLwvScLbkt/y\nddLvPlFsj3aqjdZtrQxGvFBgdiORBBnasBJYswAL6bASbAur6G7qXDGhtMD0HPuS\nO6qHn5589JPb1lgLyoLLa69UyOXQW972fRn4t8U2BMNVcTshSVXKEIiQRRRsZYUy\nUTlBgWviSLffaeN8xXA+95sGreraTmeZX7eutVgKeK2ncRTs/ZbWaRvvVkm5KrwT\n+RQVbYKb593o+8PejHtkiaClK3lLXmLkFQ1X2TgYCLpZN4qNptUercZ7uG5c81QJ\nDWAU7FQl0Am+iYAC3daG2wum5xw0jmp5fCWMLQARHQKBgQD1tL/+IfkR1TGU1v0P\na1bZB3n3GA2YbMW6Sk8VEScL7j4INx2+oPmneLUc8AEKRY6MvRpE+5mri7DKIUs4\nhXcHKHN65KpLaXRuXWCzL4eudWAxBBp2cbKr3sGvlawDRwGD0DhhtBxx2Bu6rqv0\nbTd7BsV27cvEFKugyw1LPn2HewKBgQDgd+ejvsVa3dF21PcQI6HG/y9+Ol8Akvgb\n9Wndd8saTaW0q44vAkwQK25BOahfgHT+niD+JXfnWlhJCZ6dZkN3lHn/Pkh9vFMZ\nc9bAZx9s4rDauIwZnXRHjmTWQjPs29Qy2HksZiH0SSfQCKpCVWpU6v/X+QYALncn\nEMoDw7EjUwKBgChisTwAMYQw2plwTN//8KJzjCSFG5b2KfnYxO7dhuF7I08OYCE5\nLE/Ok1ZSTJl3nVqcqni0Min0J/bRSh/cMBhJGdIVS7hhePW6+234XgDa4hisZ/0X\n6xo83vERVNilDyavTtUgWZyMvOIOW80tNnVOQ56sr1VnYF5pgaHgf5mJAoGBALzE\n2W6hHkM+S8sNagCOlpxNOlmDKSXIcxLAHhl7hrhGGFaJ93adDe6DN6Nuo6Q82SbP\nQJu6Us2i8p/pkRR5Tb+gg8AdVsU2vQOooS8JCip9sZEepeNcwM70duSgpB5K+HcS\nCUVHVsKjSvHud5B1WIi1YBb2ew9oBBg8TEdCKRO1AoGAf8UlQRGRsocQE48MXbQ2\nSWC7UE4w3ClH53kFf9poLMWiTSgN1mGuDOo5HyY3djmbE1Q0i4qtJSfXCmKFo5gE\npRHwY950Mo+n3X2IwNN4Lopb3Kj9S8E9ohI5myDHPZjhUAVg3JSu+PLCDb9m1jpn\nm3xgtto+ide7c5ho3XA2DEc=\n-----END PRIVATE KEY-----\n",
+  "client_email": "service-account-1@home-patient-monitoring.iam.gserviceaccount.com",
+  "client_id": "110520071028002319013",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/service-account-1%40home-patient-monitoring.iam.gserviceaccount.com"
+}
